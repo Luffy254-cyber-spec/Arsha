@@ -27,7 +27,8 @@ urlpatterns = [
 
     path("home/", views.index, name="index"),
 
-    
+    path("contact/", views.home, name="contact"),
+
 
 
     # Blog

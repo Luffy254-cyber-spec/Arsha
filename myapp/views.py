@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from myapp.models import *
 
 # 🏠 Home page
 def index(request):
@@ -23,3 +24,16 @@ def starter(request):
 # ❌ Custom error page
 def error(request):
     return render(request, "404.html")
+
+def home(request):
+    if request.method == 'POST':
+        mycontact = Contact(
+            name=request.POST['name'],
+            email=request.POST['email'],
+            subject=request.POST['subject'],
+            message=request.POST['message'],
+        )
+        mycontact.save()
+        return render(request, 'index.html')
+    else:
+        return render(request, 'index.html')
