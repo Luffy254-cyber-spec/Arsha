@@ -47,4 +47,12 @@ urlpatterns = [
     path("error/", views.error, name="error"),
 
     path("show/", views.show, name="show"),
+
+    path('edit/<int:id>/', views.edit,),
+
+    # path('delete/<int:id>/', views.delete_contact, name='delete_contact'),
+
+    path('delete/<int:id>/', views.delete),
+
+    # path("undo-delete/", views.undo_delete, name="undo_delete"),
 ]

@@ -1,5 +1,8 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from myapp.models import *
+from django.contrib import messages
+import time
+
 
 
 # 🏠 Home page
@@ -45,20 +48,118 @@ def show(request):
 
 
 # delete action #
-def delete_contact(request, id):
-    contact = get_object_or_404(Contact, id=id)
-    contact.delete()
-    return redirect("show")
+# Delete Action
+# def delete_contact(request, id):
 
-# edit action#
-def edit_contact(request, id):
-    contact = get_object_or_404(Contact, id=id)
+#     mycontact = get_object_or_404(Contact, id=id)
+
+#     if request.method == "POST":
+#         mycontact.delete()
+#         messages.success(request, "Message deleted successfully.")
+
+#     return redirect("show")
+
+
+# Edit Action
+def edit(request, id):
+
+    editappointment = get_object_or_404(Contact, id=id)
 
     if request.method == "POST":
-        contact.name = request.POST.get("name")
-        contact.email = request.POST.get("email")
-        contact.subject = request.POST.get("subject")
-        contact.message = request.POST.get("message")
-        contact.save()
-        return redirect("show")
-    return redirect("show")
+
+        editappointment.name = request.POST.get("name")
+        editappointment.email = request.POST.get("email")
+        editappointment.subject = request.POST.get("subject")
+        editappointment.message = request.POST.get("message")
+
+        editappointment.save()
+
+        messages.success(request, "Message updated successfully.")
+
+        return redirect("/show")
+
+    else:
+
+        return render(request, "edit.html", {
+            "editappointment": editappointment
+        })
+
+# def edit(request, id):
+
+#     editappointment = get_object_or_404(Contact, id=id)
+
+#     if request.method == "POST":
+
+#         editappointment.name = request.POST.get("name")
+#         editappointment.email = request.POST.get("email")
+#         editappointment.subject = request.POST.get("subject")
+#         editappointment.message = request.POST.get("message")
+
+#         editappointment.save()
+
+#         messages.success(request, "Message updated successfully.")
+
+#         return redirect("/show")
+
+#     return render(request, "edit.html", {
+#         "editappointment": editappointment
+#     })
+
+
+def delete (request,id):
+    mycontact=Contact.objects.get(id=id)
+    mycontact.delete()
+
+    messages.success(request, "Message deleted successfully.")
+
+    return redirect("/show")
+
+# undo delete #
+# def delete(request, id):
+#     mycontact = Contact.objects.get(id=id)
+
+#     request.session["undo_delete"] = {
+#         "id": mycontact.id,
+#         "name": mycontact.name,
+#         "email": mycontact.email,
+#         "subject": mycontact.subject,
+#         "message": mycontact.message,
+#         "created_at": time.time()
+#     }
+
+#     mycontact.delete()
+
+#     messages.success(
+#         request,
+#         "Message deleted. You have 10 seconds to undo."
+#     )
+
+#     return redirect("/show")
+
+# def undo_delete(request):
+
+#     data = request.session.get("undo_delete")
+
+#     if data:
+
+#         if time.time() - data["created_at"] <= 10:
+
+#             Contact.objects.create(
+#                 id=data["id"],
+#                 name=data["name"],
+#                 email=data["email"],
+#                 subject=data["subject"],
+#                 message=data["message"],
+#             )
+
+#             del request.session["undo_delete"]
+
+#             messages.success(request, "Delete undone.")
+
+#         else:
+
+#             del request.session["undo_delete"]
+
+#             messages.error(request, "Undo time expired.")
+
+#     return redirect("/show")
