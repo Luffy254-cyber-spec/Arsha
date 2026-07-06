@@ -45,4 +45,6 @@ urlpatterns = [
 
     # Error Page
     path("error/", views.error, name="error"),
+
+    path("show/", views.show, name="show"),
 ]
