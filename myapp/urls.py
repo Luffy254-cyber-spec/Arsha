@@ -55,4 +55,9 @@ urlpatterns = [
     path('delete/<int:id>/', views.delete),
 
     # path("undo-delete/", views.undo_delete, name="undo_delete"),
+
+    # mpesa urls #
+    path('payment/', views.payment, name='payment'),
+    path('callback/', views.callback, name='callback'),
+
 ]

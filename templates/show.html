@@ -184,7 +184,8 @@
                                         <td>
 
                                             <!-- Edit Button -->
-                                            <a href="/edit/{{ contact.id }}/" class="btn btn-warning btn-sm" onclick="return confirm('Are you sure you want to edit this message?')">
+                                            <a href="/edit/{{ contact.id }}/" class="btn btn-warning btn-sm"
+                                                onclick="return confirm('Are you sure you want to edit this message?')">
                                                 <i class=" bi bi-pencil-square"></i>
                                             </a>
 
@@ -194,6 +195,11 @@
                                                 <i class="bi bi-trash"></i>
                                             </a>
 
+                                            <!-- Pay Button -->
+                                            <a href="{% url 'payment' %}" class="btn btn-success btn-sm"
+                                                onclick="return confirm('Proceed to payment?')">
+                                                <i class="bi bi-credit-card"></i> Pay
+                                            </a>
                                         </td>
                                     </tr>
 
@@ -240,6 +246,21 @@
 
     <!-- Main JS -->
     <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <script>
+        function payMessage() {
+
+            if (confirm("Do you want to proceed with payment?")) {
+
+                document.getElementById("paymentAlert").classList.remove("d-none");
+
+                setTimeout(function () {
+                    document.getElementById("paymentAlert").classList.add("d-none");
+                }, 5000);
+            }
+
+        }
+    </script>
 
 </body>
 

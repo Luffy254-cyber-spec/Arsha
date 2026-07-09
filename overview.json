@@ -1,7 +1,13 @@
 {
   "rootFolder": "c:\\Users\\user\\Desktop\\Genesis",
-  "analyzedAt": "2026-07-06T06:48:12.368Z",
+  "analyzedAt": "2026-07-08T07:09:13.603Z",
   "rootStructure": [
+    {
+      "name": "basic_arsha_template.html",
+      "type": "file",
+      "size": 3287,
+      "lines": 100
+    },
     {
       "name": "db.sqlite3",
       "type": "file",
@@ -44,8 +50,20 @@
     }
   ],
   "rootFileSnippets": {
+    "basic_arsha_template.html": [
+      "<!DOCTYPE html>",
+      "<html lang=\"en\">",
+      "",
+      "<head>",
+      "<meta charset=\"UTF-8\">",
+      "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+      "<title>New Page | Arsha</title>",
+      "",
+      "{% load static %}",
+      ""
+    ],
     "db.sqlite3": [
-      "SQLite format 3\u0000\u0010\u0000\u0001\u0001\u0000@  \u0000\u0000\u0000.\u0000\u0000\u0000$\u0000\u0000\u0000!\u0000\u0000\u0000\u0001\u0000\u0000\u0000?\u0000\u0000\u0000\u0004\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000.\u0000.�\u0014\u0005\u0000\u0000\u0000\u0001\u000f�\u0000\u0000\u0000\u0000\u0017\u000f�\r\u001d\u000b�\u000b&\u000b�\t�\u0007�\t�\u0006�\u0005g\u0004�\u0003�\u0002�\u0002O\u0001�\u0000�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�?\u0012\u0007\u0017k-\u0001�sindexauth_user_groups_user_id_group_id_94350c0c_uniqauth_user_groups\u0013CREATE UNIQUE INDEX \"auth_user_groups_user_id_group_id_94350c0c_uniq\" ON \"auth_user_groups\" (\"user_id\", \"group_id\")�:\u0011\u0007\u0017g9\u0001�aindexauth_group_permissions_permission_id_84c5c92eauth_group_permissions\u0012CREATE INDEX \"auth_group_permissions_permission_id_84c5c92e\" ON \"auth_group_permissions\" (\"permission_id\")�+\u0010\u0007\u0017]9\u0001�Mindexauth_group_permissions_group_id_b120cbf9auth_group_permissions\u0011CREATE INDEX \"auth_group_permissions_group_id_b120cbf9\" ON \"auth_group_permissions\" (\"group_id\")�j\u000f\b\u0017�\u00039\u0001�#indexauth_group_permissions_group_id_permission_id_0cd325b0_uniqauth_group_permissions\u0010CREATE UNIQUE INDEX \"auth_group_permissions_group_id_permission_id_0cd325b0_uniq\" ON \"auth_group_permissions\" (\"group_id\", \"permission_id\")�$\u000e\u0007\u0017]+\u0001�Mindexauth_permission_content_type_id_2f476e4bauth_permission\u000fCREATE INDEX \"auth_permission_content_type_id_2f476e4b\" ON \"auth_permission\" (\"content_type_id\")�S\r\u0007\u0017y+\u0001�\u000findexauth_permission_content_type_id_codename_01ab375a_uniqauth_permission\u000eCREATE UNIQUE INDEX \"auth_permission_content_type_id_codename_01ab375a_uniq\" ON \"auth_permission\" (\"content_type_id\", \"codename\")�X\f\u0007\u0017AA\u0001�;tableauth_user_user_permissionsauth_user_user_permissions\rCREATE TABLE \"auth_user_user_permissions\" (\"id\" integer NOT NULL PRIMARY KEY AUTOINCREMENT, \"user_id\" integer NOT NULL REFERENCES \"auth_user\" (\"id\") DEFERRABLE INITIALLY DEFERRED, \"permission_id\" integer NOT NULL REFERENCES \"auth_permission\" (\"id\") DEFERRABLE INITIALLY DEFERRED)�0\u000b\u0007\u0017--\u0001�\u0013tableauth_user_groupsauth_user_groups\fCREATE TABLE \"auth_user_groups\" (\"id\" integer NOT NULL PRIMARY KEY AUTOINCREMENT, \"user_id\" integer NOT NULL REFERENCES \"auth_user\" (\"id\") DEFERRABLE INITIALLY DEFERRED, \"group_id\" integer NOT NULL REFERENCES \"auth_group\" (\"id\") DEFERRABLE INITIALLY DEFERRED)�*\t\u0007\u0017\u001f\u001f\u0001�#tableauth_userauth_user",
+      "SQLite format 3\u0000\u0010\u0000\u0001\u0001\u0000@  \u0000\u0000\u0000/\u0000\u0000\u0000$\u0000\u0000\u0000!\u0000\u0000\u0000\u0001\u0000\u0000\u0000?\u0000\u0000\u0000\u0004\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000/\u0000.�\u0014\u0005\u0000\u0000\u0000\u0001\u000f�\u0000\u0000\u0000\u0000\u0017\u000f�\r\u001d\u000b�\u000b&\u000b�\t�\u0007�\t�\u0006�\u0005g\u0004�\u0003�\u0002�\u0002O\u0001�\u0000�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�?\u0012\u0007\u0017k-\u0001�sindexauth_user_groups_user_id_group_id_94350c0c_uniqauth_user_groups\u0013CREATE UNIQUE INDEX \"auth_user_groups_user_id_group_id_94350c0c_uniq\" ON \"auth_user_groups\" (\"user_id\", \"group_id\")�:\u0011\u0007\u0017g9\u0001�aindexauth_group_permissions_permission_id_84c5c92eauth_group_permissions\u0012CREATE INDEX \"auth_group_permissions_permission_id_84c5c92e\" ON \"auth_group_permissions\" (\"permission_id\")�+\u0010\u0007\u0017]9\u0001�Mindexauth_group_permissions_group_id_b120cbf9auth_group_permissions\u0011CREATE INDEX \"auth_group_permissions_group_id_b120cbf9\" ON \"auth_group_permissions\" (\"group_id\")�j\u000f\b\u0017�\u00039\u0001�#indexauth_group_permissions_group_id_permission_id_0cd325b0_uniqauth_group_permissions\u0010CREATE UNIQUE INDEX \"auth_group_permissions_group_id_permission_id_0cd325b0_uniq\" ON \"auth_group_permissions\" (\"group_id\", \"permission_id\")�$\u000e\u0007\u0017]+\u0001�Mindexauth_permission_content_type_id_2f476e4bauth_permission\u000fCREATE INDEX \"auth_permission_content_type_id_2f476e4b\" ON \"auth_permission\" (\"content_type_id\")�S\r\u0007\u0017y+\u0001�\u000findexauth_permission_content_type_id_codename_01ab375a_uniqauth_permission\u000eCREATE UNIQUE INDEX \"auth_permission_content_type_id_codename_01ab375a_uniq\" ON \"auth_permission\" (\"content_type_id\", \"codename\")�X\f\u0007\u0017AA\u0001�;tableauth_user_user_permissionsauth_user_user_permissions\rCREATE TABLE \"auth_user_user_permissions\" (\"id\" integer NOT NULL PRIMARY KEY AUTOINCREMENT, \"user_id\" integer NOT NULL REFERENCES \"auth_user\" (\"id\") DEFERRABLE INITIALLY DEFERRED, \"permission_id\" integer NOT NULL REFERENCES \"auth_permission\" (\"id\") DEFERRABLE INITIALLY DEFERRED)�0\u000b\u0007\u0017--\u0001�\u0013tableauth_user_groupsauth_user_groups\fCREATE TABLE \"auth_user_groups\" (\"id\" integer NOT NULL PRIMARY KEY AUTOINCREMENT, \"user_id\" integer NOT NULL REFERENCES \"auth_user\" (\"id\") DEFERRABLE INITIALLY DEFERRED, \"group_id\" integer NOT NULL REFERENCES \"auth_group\" (\"id\") DEFERRABLE INITIALLY DEFERRED)�*\t\u0007\u0017\u001f\u001f\u0001�#tableauth_userauth_user",
       "CREATE TABLE \"auth_user\" (\"id\" integer NOT NULL PRIMARY KEY AUTOINCREMENT, \"password\" varchar(128) NOT NULL, \"last_login\" datetime NOT NULL, \"is_superuser\" bool NOT NULL, \"username\" varchar(30) NOT NULL UNIQUE, \"first_name\" varchar(30) NOT NULL, \"last_name\" varchar(30) NOT NULL, \"email\" varchar(75) NOT NULL, \"is_staff\" bool NOT NULL, \"is_active\" bool NOT NULL, \"date_joined\" datetime NOT NULL)1",
       "\u0006\u0017E\u001f\u0001\u0000indexsqlite_autoindex_auth_user_1auth_user\u000b�N\b\u0007\u001799\u0001�7tableauth_group_permissionsauth_group_permissions\tCREATE TABLE \"auth_group_permissions\" (\"id\" integer NOT NULL PRIMARY KEY AUTOINCREMENT, \"group_id\" integer NOT NULL REFERENCES \"auth_group\" (\"id\") DEFERRABLE INITIALLY DEFERRED, \"permission_id\" integer NOT NULL REFERENCES \"auth_permission\" (\"id\") DEFERRABLE INITIALLY DEFERRED)�\u0010\u0006\u0007\u0017!!\u0001�ktableauth_groupauth_group\u0007CREATE TABLE \"auth_group\" (\"id\" integer NOT NULL PRIMARY KEY AUTOINCREMENT, \"name\" varchar(80) NOT NULL UNIQUE)3\u0007\u0006\u0017G!\u0001\u0000indexsqlite_autoindex_auth_group_1auth_group\b\u0000\u0000\u0000\b\u0000\u0000\u0000\u0000�$\u0005\u0007\u0017++\u0001�tableauth_permissionauth_permission\u0006CREATE TABLE \"auth_permission\" (\"id\" integer NOT NULL PRIMARY KEY AUTOINCREMENT, \"name\" varchar(50) NOT NULL, \"content_type_id\" integer NOT NULL REFERENCES \"django_content_type\" (\"id\") DEFERRABLE INITIALLY DEFERRED, \"codename\" varchar(100) NOT NULL)�H\u0004\u0007\u0017o3\u0001�{indexdjango_content_type_app_label_model_76bd3d3b_uniqdjango_content_type\u0005CREATE UNIQUE INDEX \"django_content_type_app_label_model_76bd3d3b_uniq\" ON \"django_content_type\" (\"app_label\", \"model\")�g\u0003\u0007\u001733\u0001�utabledjango_content_typedjango_content_type\u0004CREATE TABLE \"django_content_type\" (\"id\" integer NOT NULL PRIMARY KEY AUTOINCREMENT, \"name\" varchar(100) NOT NULL, \"app_label\" varchar(100) NOT NULL, \"model\" varchar(100) NOT NULL)P\u0002\u0006\u0017++\u0001Ytablesqlite_sequencesqlite_sequence\u0003CREATE TABLE sqlite_sequence(name,seq)�Y\u0001\u0007\u0017//\u0001�atabledjango_migrationsdjango_migrations\u0002CREATE TABLE \"django_migrations\" (\"id\" integer NOT NULL PRIMARY KEY AUTOINCREMENT, \"app\" varchar(255) NOT NULL, \"name\" varchar(255) NOT NULL, \"applied\" datetime NOT \u0000\u0000\u0000\u0015\u001b\r\u0000\u0000\u0000\u0014",
       "�\u0000\u000f�\u000f�\u000fd\u000f!\u000e�\u000e�\u000eB\r�\r�\rw\r4\f�\f�\fV\f\u0011\u000b�\u000b�\u000bP\u000b\u001e",
@@ -71,7 +89,7 @@
     "overview.json": [
       "{",
       "\"rootFolder\": \"c:\\\\Users\\\\user\\\\Desktop\\\\Genesis\",",
-      "\"analyzedAt\": \"2026-07-03T07:57:16.321Z\",",
+      "\"analyzedAt\": \"2026-07-06T06:48:12.368Z\",",
       "\"rootStructure\": [",
       "{",
       "\"name\": \"db.sqlite3\",",
@@ -82,7 +100,7 @@
     ],
     "overview_architecture.puml": [
       "@startuml",
-      "' Generated by SASVA Maria on 2026-07-03T07:57:40.337Z",
+      "' Generated by SASVA Maria on 2026-07-06T06:48:43.218Z",
       "' ERROR: Diagram generation failed",
       "",
       "note \"Architecture Diagram Generation Failed\\n\\nError: No chat model configured\\n\\nPlease check the logs for more details.\" as ErrorNote",
@@ -125,19 +143,19 @@
     "templates": "Thanks for downloading this template!\r\n\r\nTemplate Name: Arsha\r"
   },
   "totals": {
-    "numFiles": 82,
+    "numFiles": 84,
     "numDirs": 27,
-    "totalSizeBytes": 3173573,
-    "totalLinesOfCode": 686
+    "totalSizeBytes": 3195697,
+    "totalLinesOfCode": 795
   },
   "fileCategories": {
-    "other": 62,
+    "other": 64,
     "source": 17,
     "config": 1,
     "documentation": 2
   },
   "linesOfCodePerLanguage": {
-    "Python": 454,
+    "Python": 563,
     "JavaScript": 232
   },
   "filesPerLanguage": {
@@ -157,7 +175,7 @@
     {
       "name": "myapp",
       "numFiles": 10,
-      "totalLoc": 247,
+      "totalLoc": 356,
       "dominantLanguage": "Python"
     },
     {
@@ -174,11 +192,34 @@
     },
     {
       "name": "templates",
-      "numFiles": 9,
+      "numFiles": 10,
       "totalLoc": 0
     }
   ],
   "detailedDirectories": [
+    {
+      "path": "myapp",
+      "name": "myapp",
+      "level": 1,
+      "numFiles": 10,
+      "totalLoc": 356,
+      "dominantLanguage": "Python",
+      "category": "Application",
+      "description": "Application module with 10 files (Python)",
+      "subdirectories": [
+        {
+          "path": "myapp\\migrations",
+          "name": "migrations",
+          "level": 2,
+          "numFiles": 3,
+          "totalLoc": 80,
+          "dominantLanguage": "Python",
+          "category": "General",
+          "description": "General module with 3 files (Python)",
+          "subdirectories": []
+        }
+      ]
+    },
     {
       "path": "static",
       "name": "static",
@@ -245,29 +286,6 @@
       ]
     },
     {
-      "path": "myapp",
-      "name": "myapp",
-      "level": 1,
-      "numFiles": 10,
-      "totalLoc": 247,
-      "dominantLanguage": "Python",
-      "category": "Application",
-      "description": "Application module with 10 files (Python)",
-      "subdirectories": [
-        {
-          "path": "myapp\\migrations",
-          "name": "migrations",
-          "level": 2,
-          "numFiles": 3,
-          "totalLoc": 80,
-          "dominantLanguage": "Python",
-          "category": "General",
-          "description": "General module with 3 files (Python)",
-          "subdirectories": []
-        }
-      ]
-    },
-    {
       "path": "Genesis",
       "name": "Genesis",
       "level": 1,
@@ -282,7 +300,7 @@
       "path": "templates",
       "name": "templates",
       "level": 1,
-      "numFiles": 9,
+      "numFiles": 10,
       "totalLoc": 0,
       "category": "Views/Templates",
       "description": "Thanks for downloading this template!\r",
@@ -296,7 +314,7 @@
         "name": "myapp",
         "level": 1,
         "numFiles": 10,
-        "totalLoc": 247,
+        "totalLoc": 356,
         "dominantLanguage": "Python",
         "category": "Application",
         "description": "Application module with 10 files (Python)",
@@ -341,14 +359,14 @@
     "total": 0
   },
   "complexity": {
-    "averageFileSize": 8.365853658536585,
+    "averageFileSize": 9.464285714285714,
     "maxFileSize": 0,
     "nestedDepth": 0,
     "estimatedComplexity": "low"
   },
   "gitRepo": {
-    "firstCommitDate": "2026-07-01",
-    "totalCommits": 2,
+    "firstCommitDate": "2026-07-06",
+    "totalCommits": 4,
     "numContributors": 0,
     "currentBranch": "master",
     "remoteUrls": [
