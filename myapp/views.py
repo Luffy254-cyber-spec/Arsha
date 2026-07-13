@@ -263,3 +263,6 @@ def callback(request):
     """M-Pesa sends payment results here after the customer pays."""
     print("M-Pesa Callback:", request.body)
     return JsonResponse({"ResultCode": 0, "ResultDesc": "Accepted"})
+
+# def admin_dashboard(request):
+#     return render(request, "admin.html")

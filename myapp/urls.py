@@ -20,7 +20,12 @@ from django.urls import path
 from myapp import views
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("admin/", admin.site.urls),     # Default Django Admin
+    
+    # path("dashboard/", views.admin_dashboard, name="dashboard"),
+    
+    
+
 
     # Home
     path("", views.index, name="home"),
