@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Contact | Arsha</title>
+
+    {% load static %}
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS -->
+
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Main CSS -->
+
+    <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f6f9ff;
+        }
+
+        .edit-card {
+
+            border: none;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+
+        }
+
+        .edit-header {
+
+            background: linear-gradient(135deg, #37517e, #47b2e4);
+
+            color: white;
+
+            padding: 35px;
+
+        }
+
+        .edit-header h2 {
+
+            color: white;
+
+            margin-bottom: 10px;
+
+        }
+
+        .form-control {
+
+            border-radius: 10px;
+
+            padding: 12px;
+
+        }
+
+        .form-control:focus {
+
+            box-shadow: none;
+
+            border-color: #47b2e4;
+
+        }
+
+        .btn-save {
+
+            background: #47b2e4;
+
+            color: white;
+
+            padding: 12px 35px;
+
+            border-radius: 50px;
+
+        }
+
+        .btn-save:hover {
+
+            background: #2f9fd4;
+
+            color: white;
+
+        }
+
+        .btn-cancel {
+
+            border-radius: 50px;
+
+            padding: 12px 30px;
+
+        }
+
+        .icon-circle {
+
+            width: 70px;
+
+            height: 70px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            margin: auto;
+
+            color: #37517e;
+
+            font-size: 32px;
+
+        }
+    </style>
+
+</head>
+
+<body class="index-page">
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="{% url 'home' %}" class="logo d-flex align-items-center">
+
+                <h1 class="sitename">Arsha</h1>
+
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+
+                <ul>
+
+                    <li><a href="{% url 'home' %}">Home</a></li>
+
+                    <li><a href="{% url 'blog' %}">Blog</a></li>
+
+                    <li><a href="{% url 'show' %}" class="active">Messages</a></li>
+
+                </ul>
+
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main class="main">
+
+        <section class="section" style="margin-top:120px;">
+
+            <div class="container" data-aos="fade-up">
+
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-8">
+
+                        <div class="card edit-card">
+
+                            <div class="edit-header text-center">
+
+                                <div class="icon-circle">
+
+                                    <i class="bi bi-pencil-square"></i>
+
+                                </div>
+
+                                <h2 class="mt-4">
+
+                                    Edit Contact Message
+
+                                </h2>
+
+                                <p class="mb-0">
+
+                                    Update the selected contact information below.
+
+                                </p>
+
+                            </div>
+
+                            <div class="card-body p-5">
+
+                                {% if messages %}
+
+                                {% for message in messages %}
+
+                                <div class="alert alert-success alert-dismissible fade show">
+
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+
+                                    {{ message }}
+
+                                    <button class="btn-close" data-bs-dismiss="alert"></button>
+
+                                </div>
+
+                                {% endfor %}
+
+                                {% endif %}
+
+                                <form action="{% url 'contact' %}" method="post">
+                                    {% csrf_token %}
+                                    <!-- Name -->
+                                    <div class="row gy-4">
+
+                                        <div class="col-md-6">
+
+                                            <label class="form-label fw-semibold">
+                                                <i class="bi bi-person-fill text-primary me-2"></i>
+                                                Full Name
+                                            </label>
+
+                                            <input type="text" name="name" class="form-control"
+                                                placeholder="Enter full name" value="{{ editappointment.name }}"
+                                                required>
+
+                                        </div>
+
+                                        <!-- Email -->
+
+                                        <div class="col-md-6">
+
+                                            <label class="form-label fw-semibold">
+                                                <i class="bi bi-envelope-fill text-primary me-2"></i>
+                                                Email Address
+                                            </label>
+
+                                            <input type="email" name="email" class="form-control"
+                                                placeholder="example@email.com" value="{{ editappointment.email }}"
+                                                required>
+
+                                        </div>
+
+                                        <!-- Subject -->
+
+                                        <div class="col-12">
+
+                                            <label class="form-label fw-semibold">
+                                                <i class="bi bi-chat-left-text-fill text-primary me-2"></i>
+                                                Subject
+                                            </label>
+
+                                            <input type="text" name="subject" class="form-control" placeholder="Subject"
+                                                value="{{ editappointment.subject }}" required>
+
+                                        </div>
+
+                                        <!-- Message -->
+
+                                        <div class="col-12">
+
+                                            <label class="form-label fw-semibold">
+                                                <i class="bi bi-pencil-square text-primary me-2"></i>
+                                                Message
+                                            </label>
+
+                                            <textarea class="form-control" name="message" rows="8"
+                                                placeholder="Write your message here..."
+                                                required>{{ editappointment.message }}</textarea>
+
+                                        </div>
+
+                                        <!-- Record Info -->
+
+                                        <div class="col-12">
+
+                                            <div class="alert alert-info border-0 shadow-sm">
+
+                                                <div class="row">
+
+                                                    <div class="col-md-4">
+
+                                                        <strong>ID:</strong>
+
+                                                        {{ editappointment.id }}
+
+                                                    </div>
+
+                                                    <div class="col-md-4">
+
+                                                        <strong>Created:</strong>
+
+                                                        {{ editappointment.created_at|date:"d M Y" }}
+
+                                                    </div>
+
+                                                    <div class="col-md-4">
+
+                                                        <strong>Status:</strong>
+
+                                                        <span class="badge bg-success">
+
+                                                            Active
+
+                                                        </span>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <!-- Buttons -->
+
+                                        <div class="col-12 mt-4">
+
+                                            <div
+                                                class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+
+                                                <a href="{% url 'show' %}" class="btn btn-outline-secondary btn-cancel">
+
+                                                    <i class="bi bi-arrow-left-circle me-2"></i>
+
+                                                    Back to Messages
+
+                                                </a>
+
+                                                <div>
+
+                                                    <button type="reset" class="btn btn-light border me-2">
+
+                                                        <i class="bi bi-arrow-counterclockwise me-2"></i>
+
+                                                        Reset
+
+                                                    </button>
+
+                                                    <button type="submit" class="btn btn-save">
+
+                                                        <i class="bi bi-check-circle-fill me-2"></i>
+
+                                                        Save Changes
+
+                                                    </button>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer light-background">
+
+        <div class="container footer-top">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-12 text-center">
+
+                    <h4>Arsha Contact Management</h4>
+
+                    <p class="mb-2">
+                        Modern Contact Management Dashboard built with Django & Bootstrap.
+                    </p>
+
+                    <div class="social-links d-flex justify-content-center mt-3">
+
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container copyright text-center mt-4">
+
+            <p>
+
+                © <strong class="px-1 sitename">Arsha</strong>
+
+                All Rights Reserved
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- Scroll Top -->
+
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+
+        <i class="bi bi-arrow-up-short"></i>
+
+    </a>
+
+    <!-- Preloader -->
+
+    <div id="preloader"></div>
+
+    <!-- Vendor JS -->
+
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+    <!-- Main JS -->
+
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <script>
+
+        AOS.init({
+
+            duration: 900,
+
+            once: true
+
+        });
+
+        // Auto-hide alerts
+
+        setTimeout(function () {
+
+            const alerts = document.querySelectorAll(".alert");
+
+            alerts.forEach(function (alert) {
+
+                const bsAlert = new bootstrap.Alert(alert);
+
+                bsAlert.close();
+
+            });
+
+        }, 5000);
+
+
+        // Submit button loading effect
+
+        const form = document.querySelector("form");
+
+        const submitBtn = document.querySelector(".btn-save");
+
+        if (form) {
+
+            form.addEventListener("submit", function () {
+
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Saving...';
+
+                submitBtn.disabled = true;
+
+            });
+
+        }
+
+
+        // Smooth focus animation
+
+        document.querySelectorAll(".form-control").forEach(function (input) {
+
+            input.addEventListener("focus", function () {
+
+                this.parentElement.style.transform = "translateY(-2px)";
+
+                this.parentElement.style.transition = "0.3s";
+
+            });
+
+            input.addEventListener("blur", function () {
+
+                this.parentElement.style.transform = "translateY(0px)";
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

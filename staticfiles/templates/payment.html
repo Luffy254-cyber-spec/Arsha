@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page | Arsha</title>
+
+    {% load static %}
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS -->
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+            <!-- Logo -->
+            <a href="{% url 'home' %}" class="logo d-flex align-items-center">
+                <h1 class="sitename">Arsha</h1>
+            </a>
+
+            <!-- Navigation -->
+            <nav id="navmenu" class="navmenu">
+
+                <ul>
+
+                    <li><a href="{% url 'home' %}">Home</a></li>
+
+                    <li><a href="{% url 'blog' %}">Blog</a></li>
+
+                    <li><a href="{% url 'show' %}">Messages</a></li>
+
+                    <li><a href="#">New Page</a></li>
+
+                </ul>
+
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- ======= Main Content ======= -->
+    <main class="main" style="margin-top:120px;">
+
+        <section class="section">
+
+            <div class="container">
+                <h2>M-Pesa Express Payment</h2>
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <label>Phone Number</label><br>
+
+                    <input type="text" name="phone" placeholder="254712345678" required>
+
+                    <br><br>
+
+                    <label>Amount</label><br>
+
+                    <input type="number" name="amount" value="100" readonly>
+
+                    <br><br>
+
+                    <!-- Pay Button -->
+                    <button class="btn btn-success btn-sm" onclick="payMessage()">
+                        <i class="bi bi-credit-card"></i> Pay
+                    </button>
+
+                    <!-- Success Message -->
+                    <div id="paymentAlert" class="alert alert-success mt-3 d-none" role="alert">
+                        <i class="bi bi-check-circle-fill"></i>
+                        Payment completed successfully!
+                    </div>
+
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Vendor JS -->
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+    <!-- Main JS -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+
+    <script>
+        function payMessage() {
+
+            if (confirm("Do you want to proceed with payment?")) {
+
+                document.getElementById("paymentAlert").classList.remove("d-none");
+
+                setTimeout(function () {
+                    document.getElementById("paymentAlert").classList.add("d-none");
+                }, 5000);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

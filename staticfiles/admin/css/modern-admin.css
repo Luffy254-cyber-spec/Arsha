@@ -1,0 +1,1 @@
+body{background:#08111f;color:#fff}body:before{content:'';position:fixed;inset:0;background:radial-gradient(circle,#00d4ff55,transparent 40%),radial-gradient(circle at 80% 80%,#7c3aed55,transparent 40%);z-index:-1}#container{margin:20px;padding:20px;background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border-radius:20px}
